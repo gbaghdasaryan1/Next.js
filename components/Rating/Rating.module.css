@@ -11,3 +11,18 @@
 .editabel {
 	cursor: pointer;
 }
+.RatingWrapper {
+	position: relative;
+}
+
+.ErrorMessage {
+	position: absolute;
+	bottom: -15px;
+	left: 0;
+	color: tomato;
+}
+
+
+.error svg {
+	stroke: tomato;
+}

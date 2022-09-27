@@ -1,0 +1,289 @@
+.Product {
+	display: grid;
+	grid-template-columns: [start] 70px [Logoend] 30px [Titlestart] calc(50% - 100px) [middle] 1fr [Pricestart] auto [Priceend] 40px [Creditstart] auto [Creditend] 40px [ratestart] auto [end];
+	margin-top: 30px;
+	padding: 30px;
+}
+
+.Logo {
+	grid-column: start / Logoend;
+	grid-row: 1 / span 2;
+}
+
+.Title,
+.Tags {
+	grid-column: Titlestart / middle;
+}
+
+.Price,
+.PriceTitle {
+	grid-column: Pricestart / Priceend;
+	white-space: nowrap;
+}
+
+.Credit,
+.CreditTitle {
+	grid-column: Creditstart / Creditend;
+}
+
+.Rating,
+.RateTitle {
+	grid-column: ratestart / end;
+	white-space: nowrap;
+}
+
+.Hr,
+.Description,
+.Actions {
+	grid-column: start / end;
+}
+
+.Feature {
+	grid-column: start / middle;
+}
+
+.AdvBlock {
+	grid-column: middle / end;
+}
+
+.Logo img {
+	border-radius: 5px;
+}
+
+.Title {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 27px;
+	align-self: flex-end;
+}
+
+.Category {
+	margin-top: 7px;
+}
+
+.Price,
+.Credit {
+	font-size: 20px;
+	line-height: 27px;
+	align-self: flex-end;
+}
+
+.Month {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+.OldPrice {
+	margin-left: 5px;
+}
+
+.Rating {
+	align-self: flex-end;
+}
+
+.Description {
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 15px;
+}
+
+.PriceTitle,
+.CreditTitle,
+.RateTitle {
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 19px;
+}
+
+.ReviewButton {
+	margin-left: 20px;
+}
+
+.AdvBlock {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.AdvTitle {
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.Advantages {
+	border-left: 2px solid var(--green);
+	padding-left: 15px;
+	margin-bottom: 20px;
+}
+
+.DisAdvantages {
+	border-left: 2px solid var(--red);
+	padding-left: 15px;
+}
+
+.Characteristics {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	padding-right: 60px;
+	align-items: baseline;
+	gap: 10px;
+
+	font-size: 16px;
+	line-height: 32px;
+}
+
+.CharacteristicsName {
+	font-weight: bold;
+}
+
+.CharacteristicsDots {
+	border-bottom: 1px dashed var(--gray-light);
+	margin-bottom: 5px;
+}
+
+.Reviews {
+	overflow: hidden;
+	padding: 30px;
+}
+
+@media screen and (max-width: 1320px) {
+	.Product {
+		grid-template-columns:
+			70px 30px auto 40px auto 40px 1fr;
+		grid-template-areas:
+			"Logo . Title Title Title Title Title"
+			"Logo . Tags Tags Tags Tags Tags"
+			"Price Price Price . Credit . Rating"
+			"PriceTitle PriceTitle PriceTitle . CreditTitle . RateTitle"
+			"Hr Hr Hr Hr Hr Hr Hr"
+			"Description Description Description Description Description Description Description"
+			"Feature Feature Feature Feature Feature Feature Feature"
+			"AdvBlock AdvBlock AdvBlock AdvBlock AdvBlock AdvBlock AdvBlock"
+			"Hr2 Hr2 Hr2 Hr2 Hr2 Hr2 Hr2"
+			"Actions Actions Actions Actions Actions Actions Actions"
+		;
+	}
+
+	.Logo {
+		grid-area: Logo;
+		margin-bottom: 20px;
+	}
+
+	.Title {
+		grid-area: Title;
+	}
+
+	.Tags {
+		grid-area: Tags;
+		margin-bottom: 20px;
+	}
+
+	.Price {
+		grid-area: Price;
+	}
+
+	.Credit {
+		grid-area: Credit;
+	}
+
+	.Rating {
+		grid-area: Rating;
+	}
+
+	.PriceTitle {
+		grid-area: PriceTitle;
+	}
+
+	.CreditTitle {
+		grid-area: CreditTitle;
+	}
+
+	.RateTitle {
+		grid-area: RateTitle;
+	}
+
+	.RateTitle a {
+		color: var(--primary);
+	}
+
+	.Hr {
+		grid-area: Hr;
+	}
+
+	.Description {
+		grid-area: Description;
+	}
+
+	.Feature {
+		grid-area: Feature;
+		margin-bottom: 20px;
+	}
+
+	.AdvBlock {
+		grid-area: AdvBlock;
+	}
+
+	.Hr2 {
+		grid-area: Hr2;
+	}
+
+	.Actions {
+		grid-area: Actions;
+	}
+}
+
+
+@media screen and (max-width: 640px) {
+	.Product {
+		grid-template-columns:
+			70px 30px 1fr;
+		grid-template-areas:
+			"Logo . Title"
+			"Logo . Tags"
+			"PriceTitle PriceTitle Price"
+			"CreditTitle CreditTitle Credit"
+			"RateTitle RateTitle Rating"
+			"Hr Hr Hr"
+			"Description Description Description"
+			"Feature Feature Feature"
+			"AdvBlock AdvBlock AdvBlock"
+			"Hr2 Hr2 Hr2"
+			"Actions Actions Actions"
+		;
+	}
+
+	.Price {
+		margin-bottom: 10px;
+	}
+
+	.Credit {
+		margin-bottom: 10px;
+	}
+
+	.Rating {
+		margin-bottom: 10px;
+	}
+}
+
+
+@media screen and (max-width: 480px) {
+	.Product {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"Logo"
+			"Title"
+			"Tags"
+			"Price"
+			"PriceTitle"
+			"Credit"
+			"CreditTitle"
+			"Rating"
+			"RateTitle"
+			"Hr"
+			"Description"
+			"Feature"
+			"AdvBlock"
+			"Hr2"
+			"Actions"
+		;
+	}
+}

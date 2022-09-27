@@ -1,0 +1,42 @@
+/* .Wrapper {
+	margin-top: 40px;
+
+} */
+
+.Title {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	align-items: center;
+	justify-items: left;
+	gap: 20px;
+}
+
+
+.HhTitle {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: center;
+	justify-items: left;
+	gap: 20px;
+}
+
+.Seo .h1 {
+	font-weight: 500;
+	font-size: 26px;
+	line-height: 35px;
+	margin: 0;
+}
+
+.Seo .h2 {
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 30px;
+	margin-top: 50px;
+	margin-bottom: 25px;
+}
+
+.Seo .h3 {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 27px;
+}

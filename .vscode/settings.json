@@ -1,0 +1,12 @@
+{
+	"editor.wordWrap": "bounded",
+	"editor.wordWrapColumn": 160,
+	"debug.console.wordWrap": true,
+	"diffEditor.wordWrap": "on",
+	"editor.accessibilitySupport": "auto",
+	"html.format.wrapAttributes": "preserve-aligned",
+	"html.format.wrapLineLength": 180,
+	"[markdown]": {
+		"editor.wordWrap": "off"
+	}
+}

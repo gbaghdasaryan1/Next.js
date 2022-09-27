@@ -1,0 +1,10 @@
+.Sidebar {
+	display: grid;
+	align-content: flex-start;
+	gap: 20px;
+
+}
+
+/* .Logo {
+	margin-top: 34px;
+} */

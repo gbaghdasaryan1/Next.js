@@ -1,4 +1,5 @@
 // import cn from "classnames";
+import Up from "../../components/Up";
 import Footer from "../Footer";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
@@ -14,6 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
         <div>{children}</div>
       </div>
       <Footer className={classes.footer} />
+      <Up />
     </div>
   );
 };

@@ -7,7 +7,7 @@ module.exports = {
       loader: "@svgr/webpack",
       issuer: /\.[jt]sx?$/,
       options: {
-        prettier: false,
+        prettier: true,
         svgo: true,
         svgoConfig: {
           plugins: [

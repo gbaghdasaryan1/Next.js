@@ -8,17 +8,13 @@ import Tag from "../components/Tag";
 import { withLayout } from "../HOC/withLayout";
 import axios from "axios";
 import { MenuItem } from "../Interfaces/menu.interface";
+import Input from "../components/Input";
+import Textarea from "../components/Texarea";
+import { API } from "../helpers/api";
 
-const Home = ({ menu }: HomeProps): JSX.Element => {
+const Home = ({ menu, firstCategory }: HomeProps): JSX.Element => {
   const [counter, setCounter] = useState<number>(0);
   const [value, setValue] = useState<number>(3);
-
-  useEffect(() => {
-    console.log("Counter", counter);
-    return function cleanup() {
-      console.log("Unmount");
-    };
-  });
 
   return (
     <>
@@ -34,18 +30,9 @@ const Home = ({ menu }: HomeProps): JSX.Element => {
       <Button appearance='primary' arrow='down'>
         asdf
       </Button>
-      <P size='s'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae modi non
-        ad sapiente adipisci aliquid ab quis distinctio maiores! Sunt.
-      </P>
-      <P>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae modi non
-        ad sapiente adipisci aliquid ab quis distinctio maiores! Sunt.
-      </P>
-      <P size='l'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae modi non
-        ad sapiente adipisci aliquid ab quis distinctio maiores! Sunt.
-      </P>
+      <P size='s'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae modi non ad sapiente adipisci aliquid ab quis distinctio maiores! Sunt.</P>
+      <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae modi non ad sapiente adipisci aliquid ab quis distinctio maiores! Sunt.</P>
+      <P size='l'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae modi non ad sapiente adipisci aliquid ab quis distinctio maiores! Sunt.</P>
 
       <Tag color='ghost'>asdfasdf</Tag>
       <Tag color='primary'>asdfasdf</Tag>
@@ -54,11 +41,8 @@ const Home = ({ menu }: HomeProps): JSX.Element => {
 
       <Rating rating={value} isEditable={true} setRating={setValue} />
       <Rating rating={4} isEditable={false} />
-      <ul>
-        {menu.map((m) => {
-          return <li key={m._id.secondCategory}>{m._id.secondCategory}</li>;
-        })}
-      </ul>
+      <Input placeholder='Test' />
+      <Textarea placeholder='test textarea' />
     </>
   );
 };
@@ -66,12 +50,10 @@ export default withLayout(Home);
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const firstCategory = 0;
-  const { data: menu } = await axios.post<MenuItem[]>(
-    `${process.env.NEXT_PUBLIC_DOMAIN}/api/top-page/find`,
-    {
-      firstCategory,
-    }
-  );
+  const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
+    firstCategory,
+  });
+
   return {
     props: {
       menu,

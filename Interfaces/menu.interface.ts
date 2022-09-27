@@ -1,3 +1,4 @@
+import { TopLevelCategory } from "./page.iterface";
 export interface PageItem {
   alias: string;
   title: string;
@@ -10,4 +11,12 @@ export interface MenuItem {
     secondCategory: string;
   };
   pages: PageItem[];
+  isOpend?: boolean;
+}
+
+export interface FirstLevelMenuItem {
+  route: string;
+  name: string;
+  icons: JSX.Element;
+  id: TopLevelCategory;
 }

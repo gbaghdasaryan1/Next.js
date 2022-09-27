@@ -1,0 +1,87 @@
+.ReviewForm {
+	font-size: 14px;
+	line-height: 24px;
+
+	display: grid;
+	grid-template-columns: [start] auto 1fr auto [end];
+	gap: 20px 30px;
+	align-items: center;
+}
+
+
+.Description,
+.Submit {
+	grid-column: start/end;
+}
+
+
+.Title {
+	justify-self: left;
+}
+
+
+.Info {
+	margin-left: 15px;
+}
+
+
+.Rating {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 20px;
+}
+
+.Panel {
+	padding: 20px;
+	position: relative;
+	border-radius: 5px;
+	margin-top: 20px;
+}
+
+.Success {
+	background-color: var(--green-light);
+
+}
+
+.Error {
+	background: tomato;
+}
+
+.SuccessTitle {
+	font-weight: bold;
+
+}
+
+
+.Close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+
+.Error .Close path {
+	stroke: red;
+}
+
+
+@media screen and (max-width: 1100px) {
+	.ReviewForm {
+		grid-template-columns: [start] 1fr 1fr [end];
+	}
+
+	.Title {
+		justify-self: normal;
+	}
+
+	.Rating {
+		grid-column: start/end;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.ReviewForm {
+		grid-template-columns: [start] 1fr [end];
+	}
+
+}

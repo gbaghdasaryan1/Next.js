@@ -1,0 +1,86 @@
+.Hh {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	gap: 30px
+}
+
+.Count {
+	padding: 20px;
+	text-align: center;
+}
+
+.Title {
+	font-size: 20px;
+	line-height: 27px;
+	text-align: center;
+	color: #3B434E;
+	margin-bottom: 10px;
+
+}
+
+.CountValue {
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 49px;
+	text-align: center;
+	color: var(--primary);
+}
+
+.Salary {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 20px;
+	text-align: center;
+	gap: 20px 0;
+}
+
+.Salary>div {
+	border-right: 1px solid var(--grey-light);
+}
+
+.Salary>div:last-child {
+	border-right: none;
+}
+
+.SalaryValue {
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 35px;
+	margin-bottom: 10px;
+}
+
+.Rate {
+	display: grid;
+	grid-template-columns: repeat(3, 20px);
+	gap: 10px;
+	justify-content: center;
+}
+
+.Filled circle {
+	fill: var(--red);
+}
+
+
+@media screen and (max-width: 1200px) {
+	.Hh {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.Salary {
+		grid-template-columns: 1fr;
+	}
+
+	.Salary>div {
+		border-right: none;
+		border-bottom: 1px solid var(--grey-light);
+		padding-bottom: 20px;
+	}
+
+	.Salary>div:last-child {
+		padding-bottom: 0;
+		border-bottom: none;
+	}
+
+}

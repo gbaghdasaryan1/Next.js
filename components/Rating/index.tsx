@@ -3,16 +3,10 @@ import classes from "./Rating.module.css";
 import { RatingProps } from "./Rating.props";
 import cn from "classnames";
 import StarIcon from "./star.svg";
+import { forwardRef, ForwardedRef } from "react";
 
-const Rating = ({
-  rating,
-  setRating,
-  isEditable = false,
-  ...props
-}: RatingProps): JSX.Element => {
-  const [ratingArray, setRatingArray] = useState<JSX.Element[]>(
-    new Array(5).fill(<></>)
-  );
+const Rating = forwardRef(({ rating, setRating, isEditable = false, error, ...props }: RatingProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
+  const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
 
   const changeDisplay = (i: number) => {
     if (!isEditable) {
@@ -48,12 +42,7 @@ const Rating = ({
           onMouseLeave={() => changeDisplay(rating)}
           onClick={() => onStarClick(i + 1)}
         >
-          <StarIcon
-            tabIndex={isEditable ? 0 : -1}
-            onKeyDown={(e: KeyboardEvent<SVGAElement>) =>
-              isEditable && handleSpace(i + 1, e)
-            }
-          />
+          <StarIcon tabIndex={isEditable ? 0 : -1} onKeyDown={(e: KeyboardEvent<SVGAElement>) => isEditable && handleSpace(i + 1, e)} />
         </span>
       );
     });
@@ -66,12 +55,19 @@ const Rating = ({
   }, [rating]);
 
   return (
-    <div {...props}>
+    <div
+      ref={ref}
+      {...props}
+      className={cn(classes.RatingWrapper, {
+        [classes.error]: error,
+      })}
+    >
       {ratingArray.map((r, i) => (
         <span key={i}>{r}</span>
       ))}
+      {error && <span className={cn(classes.ErrorMessage)}>{error.message}</span>}
     </div>
   );
-};
+});
 
 export default Rating;

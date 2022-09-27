@@ -1,0 +1,18 @@
+.up {
+	width: 40px;
+	height: 40px;
+	background: #7653FC;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
+	border: none;
+	cursor: pointer;
+
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	transition: 0.2s;
+}
+
+.up:hover {
+	background-color: var(--primary-hover);
+}

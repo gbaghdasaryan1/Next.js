@@ -14,11 +14,17 @@ body {
 }
 
 
-
+a {
+  text-decoration: none;
+  /* color: #3B434E; */
+  display: block;
+}
 
 :root {
   --black: #3B434E;
   --grey-light: #EBEBEB;
+  --grey-dark: #787D85;
+  --grey: #A4A4A4;
   --white: #FFFFFF;
   --primary: #7653FC;
   --primary-hover: #5731f3;
